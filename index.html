@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUL$ Opti — Гайд по оптимизации ПК</title>
+    <style>
+        :root {
+            --bg-color: #0b0e14;
+            --card-bg: #131722;
+            --accent-color: #00ff66;
+            --accent-hover: #00cc52;
+            --text-main: #ffffff;
+            --text-muted: #8f9cae;
+            --border-color: #202636;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 0 40px 0;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .card-step {
+            display: inline-block;
+            background: rgba(0, 255, 102, 0.1);
+            color: var(--accent-color);
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            color: #d1d5db;
+        }
+
+        .card ul li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .card ul li strong {
+            color: var(--text-main);
+        }
+
+        .table-section {
+            margin-top: 60px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            overflow-x: auto;
+        }
+
+        .table-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+        }
+
+        td strong {
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 28px; }
+            .card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-flex">
+            <div class="logo">BUL$ <span>Opti</span></div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Ультимативный гайд по оптимизации ПК</h1>
+            <p>Методология ручной настройки системы: максимизируем FPS, стабилизируем Frame-Time и уничтожаем Input Lag.</p>
+        </section>
+
+        <main class="grid">
+            <!-- Шаг 1 -->
+            <div class="card">
+                <span class="card-step">Шаг 1</span>
+                <h2>Устранение инпут-лага от фонового софта</h2>
+                <ul>
+                    <li><strong>Отключение оверлеев:</strong> Полностью деактивируйте оверлеи в Discord, Steam и утилитах видеокарты (NVIDIA/AMD). Они вызывают микростаттеры.</li>
+                    <li><strong>Настройка лаунчеров:</strong> Настройте Steam, Epic Games и EA App на полное закрытие при запуске игр.</li>
+                    <li><strong>Аппаратное ускорение:</strong> Включите Hardware Acceleration в используемых на фоне приложениях (Браузер, Discord), чтобы перенести нагрузку на GPU и разгрузить CPU.</li>
+                </ul>
+            </div>
+
+            <!-- Шаг 2 -->
+            <div class="card">
+                <span class="card-step">Шаг 2</span>
+                <h2>Настройка процессора и электропитания</h2>
+                <ul>
+                    <li><strong>Схема питания:</strong> Включите режим «Высокая производительность» или «Максимальная производительность» (Ultimate Performance) через Панель управления, чтобы запретить парковку ядер.</li>
+                    <li><strong>Приоритет кэша L3:</strong> Игры критически зависят от объема кэша. Избегайте разгона частоты в ГГц ценой чрезмерного перегрева системы.</li>
+                </ul>
+            </div>
+
+            <!-- Шаг 3 -->
+            <div class="card">
+                <span class="card-step">Шаг 3</span>
+                <h2>Проверка DPC Latency (Скрытые задержки)</h2>
+                <ul>
+                    <li><strong>Диагностика через LatencyMon:</strong> Скачайте утилиту, запустите ее на 5–10 минут во время игры и изучите вкладку Drivers на предмет задержек прерываний.</li>
+                    <li><strong>Проблемные зоны:</strong> Чаще всего задержки создают сетевые (`ndis.sys`) и графические (`nvlddmkm.sys`) файлы.</li>
+                    <li><strong>Решение:</strong> Установите чистые официальные драйверы без лишнего мусора вроде Nahimic или Realtek Audio Console.</li>
+                </ul>
+            </div>
+
+            <!-- Шаг 4 -->
+            <div class="card">
+                <span class="card-step">Шаг 4</span>
+                <h2>Правильный сетап G-SYNC / VRR без задержек</h2>
+                <ul>
+                    <li><strong>Драйвер:</strong> Включите G-Sync/FreeSync и глобальную Вертикальную синхронизацию в панели видеокарты.</li>
+                    <li><strong>Настройки в игре:</strong> Внутри самой игры обязательно <strong>выключите</strong> вертикальную синхронизацию.</li>
+                    <li><strong>Ограничение кадров:</strong> Залочьте максимальный FPS на 3 кадра меньше максимальной герцовки монитора (например, 141 FPS для 144 Гц) во избежание включения задержки V-Sync.</li>
+                    <li><strong>Генерация кадров:</strong> Никогда не используйте Frame Interpolation в киберспортивных играх, так как она сильно повышает input lag.</li>
+                </ul>
+            </div>
+
+            <!-- Шаг 5 -->
+            <div class="card">
+                <span class="card-step">Шаг 5</span>
+                <h2>Активация Resizable BAR в BIOS</h2>
+                <ul>
+                    <li><strong>Вход в BIOS:</strong> Перезагрузите ПК и нажимайте Del или F2.</li>
+                    <li><strong>Твик памяти:</strong> В меню Advanced / PCI Subsystem включите <strong>Above 4G Decoding</strong> и <strong>Resizable BAR Support</strong>. Это откроет процессору доступ ко всей памяти видеокарты.</li>
+                </ul>
+            </div>
+
+            <!-- Шаг 6 -->
+            <div class="card">
+                <span class="card-step">Шаг 6</span>
+                <h2>Настройка частоты опроса мыши</h2>
+                <ul>
+                    <li><strong>Нагрузка на CPU:</strong> Частота опроса в 4000–8000 Гц создает колоссальную нагрузку на процессор и может вызывать фризы.</li>
+                    <li><strong>Оптимальный параметр:</strong> Установите стабильные <strong>1000 Гц</strong> в фирменном софте мыши как золотой стандарт киберспорта.</li>
+                </ul>
+            </div>
+
+            <!-- Шаг 7 -->
+            <div class="card">
+                <span class="card-step">Шаг 7</span>
+                <h2>Драйверы, накопитель и температуры</h2>
+                <ul>
+                    <li><strong>DDU очистка:</strong> Если после обновления ПО упал FPS — выполните чистую переустановку видеодрайвера через Display Driver Uninstaller в безопасном режиме.</li>
+                    <li><strong>Только SSD/NVMe:</strong> Все современные игры должны стоять на SSD. HDD вызывает заикания при потоковой подгрузке текстур.</li>
+                    <li><strong>Thermal Throttling:</strong> Следите, чтобы температура процессора не превышала 85°C. Перегрев заставляет чип сбрасывать частоты для самосохранения.</li>
+                </ul>
+            </div>
+        </main>
+
+        <section class="table-section">
+            <h2>Сводная таблица быстрых действий BUL$ Opti</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Проблема / Компонент</th>
+                        <th>Быстрое действие</th>
+                        <th>Результат</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Фоновый софт</td>
+                        <td>Отключить оверлеи</td>
+                        <td>Снижение инпут-лага мыши</td>
+                    </tr>
+                    <tr>
+                        <td>Процессор</td>
+                        <td>Схема «Максимальная производительность»</td>
+                        <td>Стабильные частоты без парковки ядер</td>
+                    </tr>
+                    <tr>
+                        <td>Монитор</td>
+                        <td>G-Sync + V-Sync (Панель) + Лимит FPS (-3 Гц)</td>
+                        <td>Идеальная плавность без задержки ввода</td>
+                    </tr>
+                    <tr>
+                        <td>BIOS</td>
+                        <td>Включить Resizable BAR и Above 4G</td>
+                        <td>Ускорение обмена данными GPU и CPU</td>
+                    </tr>
+                    <tr>
+                        <td>Игровая мышь</td>
+                        <td>Снизить частоту до 1000 Гц</td>
+                        <td>Разгрузка CPU, устранение статтеров</td>
+                    </tr>
+                    <tr>
+                        <td>Накопитель</td>
+                        <td>Перенос игр на SSD / NVMe</td>
+                        <td>Исчезновение фризов при загрузке карты</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+</body>
+</html>
